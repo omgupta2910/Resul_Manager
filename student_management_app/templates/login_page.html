@@ -1,0 +1,164 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <title>Student Management System | Log in</title>
+
+
+
+     <style>
+        .main{
+
+          width : 2000px;
+          background-color: rgba(53, 71, 171, 0.800);
+
+          color: white;
+          padding: 10px;
+        }
+
+
+
+      </style>
+
+  <!-- Tell the browser to be responsive to screen width -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="{% static "plugins/fontawesome-free/css/all.min.css" %}">
+  <!-- Ionicons -->
+  <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="{% static "plugins/icheck-bootstrap/icheck-bootstrap.min.css" %}">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="{% static "dist/css/adminlte.min.css" %}">
+  <!-- Google Font: Source Sans Pro -->
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+</head>
+
+<body >
+
+  <div class="main" style="font-size: 40px; text-align: center;">SRE Automation Portal | UPES</div>
+
+<style>button:hover {
+    background-color: dodgerblue;
+    cursor: pointer;
+  }
+  </style>
+
+
+
+
+
+
+
+<section class="text-gray-600 body-font">
+<div class="container px-5 py-24 mx-auto flex flex-wrap items-center">
+
+<div class="lg:w-3/5 md:w-1/2 md:pr-16 lg:pr-0 pr-0">
+
+  <h1 class="title-font font-medium text-3xl text-gray-900">Hello and welcome to our web portal!</h1>
+  <p class="leading-relaxed mt-4">We are delighted to welcome you to our web portal for automated result evaluation!
+    Our portal has been designed to provide a fast, efficient, and user-friendly platform for faculty members to evaluate and manage student results.<br><br>
+
+    </p>
+    <section class="text-gray-600 body-font">
+        <div class="container px-0  py-10 mx-auto">
+          <div class="flex flex-col text-left w-full mb-0">
+            <h2 class="text-xs text-indigo-500 tracking-widest font-medium title-font mb-1">TO ALL THE FACULTY MEMBERS</h2>
+            <h1 class="sm:text-3xl text-2xl font-medium titl    e-font mb-4 text-gray-900">Respected Sir/Ma'am</h1>
+            <p class=" mx-auto leading-relaxed text-base"> As a valued member of our academic community, your role is essential in ensuring the accuracy and fairness of student evaluations, and we are
+                grateful to have you with us. Our portal makes the evaluation process quick and easy, allowing you to evaluate and grade student submissions from anywhere, at any time. <br>
+                You will find a wealth of resources and tools available to you on our portal, including detailed instructions on how to use our system and access to student submissions.
+                Our portal is designed to be user-friendly and intuitive, and we are confident that you will find it to be a valuable resource in your role as a faculty member. <br><br>
+
+
+                Warmest regards</p>
+          </div>
+        </div>
+      </section>
+</div>
+
+
+
+
+
+<div class="lg:w-2/6 md:w-1/2 bg-gray-100 rounded-lg p-8 flex flex-col md:ml-auto w-full mt-10 md:mt-0">
+  <h2 class="text-gray-900 text-lg font-medium title-font mb-5">Login Here</h2>
+<div class="relative mb-4">
+
+<!-- /.login-logo -->
+  <form action="/doLogin" method="post">
+      {% csrf_token %}
+    <label for="email" class="leading-2 text-sm text-gray-600">   Email</label>
+    <div class="input-group mb-2">
+
+      <input type="email" class="form-control"  name="email">
+      <div class="input-group-append">
+        <div class="input-group-text">
+          <span class="fas fa-envelope"></span>
+        </div>
+      </div>
+    </div>
+     <label for="Password" class="leading-2 text-sm text-gray-600">Password</label>
+    <div class="input-group mb-2">
+      <input type="password" class="form-control" name="password">
+
+      <div class="input-group-append">
+
+        <div class="input-group-text">
+
+
+          <span class="fas fa-lock"></span>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <!-- /.col -->
+      <div class="col-12">
+
+   <div class="input-group mb-3">
+    <div class="g-recaptcha" data-sitekey="6LeWtqUZAAAAAMO6YmxX5_XWel9hLWrb_iEiff26"></div>
+  </div>
+      <button  class="text-white bg-indigo-500 border-0 py-2 px-20 focus:outline-none hover:bg-indigo-600 rounded text-lg" >LOGIN</button>
+
+              <p class="text-xs text-gray-500 mt-3">Thank you for choosing to be a part of our community and for your dedication to student success.</p>
+      </div><!-- /.col -->
+    </div>
+    </section>
+    <div class="row">
+      {% if messages %}
+     <div class="col-12">
+        {% for message in messages %}
+        {% if message.tags == 'error' %}
+        <div class="alert alert-danger" style="margin-top:10px">{{ message }}</div>
+        {% endif %}
+        {% endfor %}
+      </div>
+      {% endif %}
+    </div>
+  </body>
+
+  <!-- /.social-auth-links -->
+
+</>
+<!-- /.login-card-body -->
+</div>
+</div>
+<!-- /.login-box -->
+
+<!-- jQuery -->
+<script src="{% static "plugins/jquery/jquery.min.js" %}"></section>
+<!-- Bootstrap 4 -->
+<script src="{% static "plugins/bootstrap/js/bootstrap.bundle.min.js" %}"></script>
+<!-- AdminLTE App -->
+<script src="{% static "dist/js/adminlte.min.js" %}"></script>
+<script src="https://www.google.com/recaptcha/api.js" async defer></script>
+
+</body>
+</html>
+
